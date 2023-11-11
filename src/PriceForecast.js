@@ -11,16 +11,11 @@ const PriceForecast = () => {
     { name: 'StainlessSteel', price: 2000   },
   ]);
 
-  // Function to fetch the latest prices and update state
   const fetchPrices = async () => {
     const newPriceData = await getLatestPricesFromAPI();
     setPriceData(newPriceData);
-  
-    // Find the 'Cost' and 'StainlessSteel' data in newPriceData
     const costData = newPriceData.find(item => item.name === 'Cost');
     const stainlessSteelData = newPriceData.find(item => item.name === 'StainlessSteel');
-  
-    // Check if both data entries exist and compare their prices
     if (costData && stainlessSteelData && costData.price > stainlessSteelData.price) {
       //alert('Cost is greater than the price of Stainless Steel');
     }
@@ -75,9 +70,9 @@ const getLatestPricesFromAPI = async () => {
 };
 
 
-// Function to fluctuate the price by ±5%
+// Function to fluctuate the price by ±10%
 function fluctuatePrice(basePrice) {
-  const fluctuation = basePrice * 0.1; // 5% of the base price
+  const fluctuation = basePrice * 0.1; // 10% of the base price
   const change = Math.random() * fluctuation * 2 - fluctuation; // Random change between -fluctuation and +fluctuation
   return basePrice + change; // New price
 }

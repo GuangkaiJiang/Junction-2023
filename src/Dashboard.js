@@ -1,11 +1,9 @@
-import styles from './Dashboard.module.css'; // Assuming you're using CSS Modules
+import styles from './Dashboard.module.css';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
 import { AiOutlineCalendar } from 'react-icons/ai';
 import PriceForecast from './PriceForecast';
 import React, { useState, useEffect } from 'react';
 
-
-// Sample data for the pie chart
 const pieData = [
     { name: 'Iron', value: 70, color: '#646464' },
     { name: 'Chromium', value: 18, color: '#8A99C7' },
@@ -14,21 +12,11 @@ const pieData = [
     { name: 'Manganese', value: 1, color: '#9C7C38' },
     { name: 'Silicon', value: 0.5, color: '#C0C0C0' },
     { name: 'Carbon', value: 0.3, color: '#333333' },
-    // Initially, we do not include 'Other'
   ];
   
-  // Calculate the sum of the known values
-  const knownValueSum = pieData.reduce((acc, entry) => acc + entry.value, 0);
-  
-  // Assume the total should be 100%, subtract the sum of known values from 100
-  const otherValue = 100 - knownValueSum;
-  
-  // Add the 'Other' category to the pieData
-  pieData.push({ name: 'Other', value: otherValue, color: '#AAAAAA' }); // Choose an appropriate color
-
-// Colors for pie chart sectors
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A28DFF', '#FF6384'];
-
+const knownValueSum = pieData.reduce((acc, entry) => acc + entry.value, 0);
+const otherValue = 100 - knownValueSum;
+pieData.push({ name: 'Other', value: otherValue, color: '#AAAAAA' });
 
 const DailyInsights = () => {
   const [articles, setArticles] = useState([]);
@@ -36,7 +24,7 @@ const DailyInsights = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       const response = await fetch('https://newsapi.org/v2/everything?q=Outokumpu&from=2023-10-11&sortBy=publishedAt&apiKey=6f27cd6d9f34460cad2344f6bcf942be'); // Replace with your news API endpoint
-      //const response = await fetch('/api/news'); // Pointing to your Firebase Function
+      //const response = await fetch('/api/news'); // Firebase Function
       //if (!response.ok) {
       //    console.error('Failed to fetch articles');
       //    return;
