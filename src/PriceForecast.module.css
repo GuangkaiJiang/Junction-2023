@@ -1,0 +1,25 @@
+.priceForecast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .priceForecast h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive width for the bar chart container */
+  @media (max-width: 768px) {
+    .priceForecast {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+  

@@ -1,0 +1,60 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f2f5;
+    padding: 20px;
+  }
+  
+  .dateSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .riskForecast,
+  .priceForecast,
+  .dailyInsights,
+  .pastQueries,
+  .aiAssistant {
+    background: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .score {
+    font-size: 2em;
+    margin: 10px 0;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .forecastContainer {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    align-items: center; /* Align items vertically */
+  }
+  
+  .forecastColumn, .chartColumn {
+    flex: 0; /* Each column will take up equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+  }
+  
+  /* Add additional styles for responsive design, fonts, colors, etc. */
+  
