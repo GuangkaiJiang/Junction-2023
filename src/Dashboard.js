@@ -23,7 +23,9 @@ const DailyInsights = () => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const response = await fetch('https://newsapi.org/v2/everything?q=Outokumpu&from=2023-10-11&sortBy=publishedAt&apiKey=6f27cd6d9f34460cad2344f6bcf942be'); // Replace with your news API endpoint
+      //alternative https://gnews.io/api/v4/search?q=Outokumpu&lang=en&country=finland&max=10&apikey=41f73ac9043fa5207d96b64789c76c12
+      //const response = await fetch('https://newsapi.org/v2/everything?q=Outokumpu&from=2023-10-11&sortBy=publishedAt&apiKey=6f27cd6d9f34460cad2344f6bcf942be'); 
+      const response = await fetch('https://gnews.io/api/v4/search?q=Outokumpu&country=finland&max=10&apikey=41f73ac9043fa5207d96b64789c76c12'); 
       //const response = await fetch('/api/news'); // Firebase Function
       //if (!response.ok) {
       //    console.error('Failed to fetch articles');
