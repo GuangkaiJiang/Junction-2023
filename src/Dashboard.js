@@ -3,6 +3,7 @@ import { PieChart, Pie, Cell, Legend } from 'recharts';
 import { AiOutlineCalendar } from 'react-icons/ai';
 import PriceForecast from './PriceForecast';
 import React, { useState, useEffect } from 'react';
+import logo from './junctionlogo.png';
 
 const pieData = [
     { name: 'Iron', value: 70, color: '#646464' },
@@ -55,8 +56,10 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboard}>
       <div className={styles.header}>
+      
         <div className={styles.dateSection}>
-          <h1>11 November 2023 (Today)</h1>
+        <img src={logo} alt="Logo" style={{ height: '80px',width: '80px'  }} /> 
+          <h1>12 November 2023 (Today)</h1>
           <AiOutlineCalendar size={24} />
         </div>
       </div>
